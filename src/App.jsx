@@ -5,14 +5,14 @@ import { PiWrenchThin } from "react-icons/pi";
 import { IoLogoElectron } from "react-icons/io5";
 import { FaWind, FaWindows } from "react-icons/fa";
 import toast, { Toaster } from 'react-hot-toast';
-
+import { IoFlaskOutline } from "react-icons/io5";
 
 function App() {
   
   let handleDownload = () => {
     console.log("downloading")
     toast('Download Initiated', {
-      duration: 1000,
+      duration: 2000,
       position: 'top-left',
     
       // Styling
@@ -41,17 +41,54 @@ function App() {
 
   return (
     <>
+
+<motion.div
+  className="bg-gradient-to-r from-green-200 via-green-520 to-green-700 h-0.5"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1, delay: 0.2 }}
+>
+</motion.div>
+
+        
+
+    
           <Toaster />
       <div className="p-5">
 
+
+
+
+
       <motion.div 
-          className="mb-20 mt-15 flex justify-center items-center"
+          className=" px-5 flex justify-between"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 1, delay: 0.2}}
+        >
+          <div>
+          <h1 className="text-base sm:text-base text-stone-500 font-medium">
+              Tech Services
+          </h1>
+          </div>
+
+          <div>
+          <h1 className="text-base sm:text-base text-stone-500 font-medium">
+              Food Safety
+          </h1>
+          </div>
+
+
+        </motion.div>
+        
+      <motion.div 
+          className="mb-10 mt-5 flex justify-center items-center"
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ duration: 1 }}
         >
-          <h1 className="text-5xl sm:text-9xl text-[#0bbf80] font-medium">
-              Neogen Fuse
+          <h1 className="text-5xl sm:text-9xl text-green-200 font-medium bg-gradient-to-r from-green-300 via-green-400 to-green-300 text-transparent bg-clip-text leading-normal">
+            Neogen Fuse
           </h1>
         </motion.div>
 
@@ -61,7 +98,7 @@ function App() {
           animate={{opacity: 1}}
           transition={{duration: 1, delay: 0.5}}
         >
-          <p className="text-center text-stone-400"><span className='font-bold italic text-green-200 hover:text-green-300 transition-all duration-700'>Neogen Fuse</span> is a dedicated desktop software solution for managing and <span className='font-bold italic text-green-200 mr-1 hover:text-green-300 duration-700 transition-all'>enhancing</span>the LM1 electronic instrument. Whether you're looking to update firmware, modify device settings, or read data from the EEPROM, Neogen Fuse offers a simple and <span className='font-bold italic text-green-200 hover:text-green-300 duration-700 transition-all'>efficient</span> way to maintain and <span className='font-bold italic text-green-200 hover:text-green-300 duration-700 transition-all'>Optimize</span> your LM1 instrument.</p>
+          <p className="text-center text-stone-400"><span className='font-bold italic text-green-200 hover:text-green-300 transition-all duration-700'>Neogen Fuse</span> is a dedicated desktop software solution for managing and <span className='font-bold italic text-green-200 mr-1 hover:text-green-300 duration-700 transition-all'>enhancing</span>the LM1 electronic instrument. Whether you're looking to update firmware, modify device settings, or read data from the EEPROM, Neogen Fuse offers a <span className='font-bold italic text-green-200 hover:text-green-300 transition-all duration-700'>Simple</span> and <span className='font-bold italic text-green-200 hover:text-green-300 duration-700 transition-all'>efficient</span> way to maintain and <span className='font-bold italic text-green-200 hover:text-green-300 duration-700 transition-all'>Optimize</span> the LM1 instrument.</p>
         </motion.div>
 
         <motion.div
@@ -84,25 +121,25 @@ function App() {
           transition={{ duration: 1, delay: 1.5 }}
           className='px-5'
         >
-          <h1 className="flex justify-center text-2xl py-10 sm:py-5 sm:flex sm:justify-start text-stone-400">Key Features</h1>
+          <h1 className="flex justify-center text-2xl py-10 sm:py-5 sm:flex sm:justify-start text-stone-300">Key Features</h1>
         </motion.div>
 
         <motion.div
-          className="mb-20 grid sm:grid-cols-3 gap-2 hover:text-white transition-all px-5"
+          className="mb-15 grid sm:grid-cols-3 gap-2 hover:text-white transition-all px-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
           <div className="border-1 border-stone-600 rounded p-5 hover:border-green-300 transition duration-700">
-            <h1 className="font-bold pb-2 flex items-center justify-between text-stone-400"><span>Firmware Updates</span> <span><IoLogoElectron/></span></h1>
-            <p className='text-stone-400'> Keep your LM1 instrument up to date with the latest firmware updates, improving performance, adding new features, and ensuring reliability.</p>
+            <h1 className="font-bold pb-2 flex items-center justify-between text-stone-400"><span>Firmware Updates</span> <span className='text-green-200'><IoLogoElectron className='h-6 w-6'/></span></h1>
+            <p className='text-stone-400'> Keep the LM1 instrument up to date with the latest firmware updates, improving performance, adding new features, and ensuring reliability.</p>
           </div>
           <div className="border-1 border-stone-600 rounded p-5 hover:border-green-300 transition duration-700">
-          <h1 className="font-bold pb-2 flex items-center justify-between text-stone-400"><span>EEPROM Read/Write</span> <span><CiSettings/></span></h1>
-          <p className='text-stone-400'>Directly access and modify the EEPROM to manage device configurations, settings, and parameters for fine-tuned control over your LM1.</p>
+          <h1 className="font-bold pb-2 flex items-center justify-between text-stone-400"><span>EEPROM Read/Write</span> <span className='text-green-200'><CiSettings className='h-6 w-6'/></span></h1>
+          <p className='text-stone-400'>Directly access and modify the EEPROM to manage device configurations, settings, and parameters for fine-tuned control over the LM1.</p>
           </div>
           <div className="border-1 border-stone-600 rounded p-5 hover:border-green-300 transition duration-700">
-          <h1 className="font-bold pb-2 flex items-center justify-between text-stone-400"><span>Device Modifications</span> <span><PiWrenchThin/></span></h1>
+          <h1 className="font-bold pb-2 flex items-center justify-between text-stone-400"><span>Device Modifications</span> <span className='text-green-200'><IoFlaskOutline className='h-6 w-6'/></span></h1>
           <p className='text-stone-400'>Easily adjust key settings and parameters to customize the LM1 instrument for your specific needs, improving functionality and usability.</p>
           </div>
         </motion.div>
@@ -114,9 +151,11 @@ function App() {
           transition={{ duration: 1, delay: 3 }}
         >
           <p className="text-center text-stone-400">
-            With Neogen Fuse, you can ensure your LM1 instrument stays at the peak of performance with minimal effort. Designed for both professionals and enthusiasts, Neogen Fuse provides all the necessary tools to get the most out of your LM1.
+            With Neogen Fuse, you can ensure the LM1 instrument stays at the peak of performance with minimal effort. Designed for both professionals and enthusiasts, Neogen Fuse provides all the necessary tools to get the most out of the LM1.
           </p>
         </motion.div>
+
+        
 
       </div>
     </>
